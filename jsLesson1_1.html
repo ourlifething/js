@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>平均の計算</h1>
+  <input type="number" id="num" value="" placeholder="enter number">
+  <button onclick="add()">add</button> 
+  <button onclick="calc()">calc</button>
+  <div id="result"></div>
+<script>
+  const nums =[];
+  const number = document.getElementById("num");
+  const result = document.getElementById("result");
+  const add = ()=>{
+    let num = parseInt(number.value);
+    nums.push(num);
+    result.textContent=nums.join(",");
+  };
+</script>
+</body>
+</html>
