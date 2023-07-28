@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  //window.onload=()=>{};はdocumentsを全て読み込んだ最後に実行される
+window.onload=()=>{
+  document.getElementById("msg").textContent="こんにちは、イベント！"
+  func1();
+};
+</script>
+<h1 id="msg">Hello</h1>
+<script>
+ const func1=()=>{
+  console.log("!!!")
+ };
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  let obj={};//からのオブジェクト{}
+  let pen ={
+    color:"red",//フィールド的な
+    length:3
+  };
+  console.log(pen.color);//red
+  console.log(pen.length);//3
+  pen.price =100;
+  console.log(pen.price);
+  pen.length=4;
+  //pen.lenght=5; //tayp missとしてもエラーにならない
+  let hero={
+  //クラスは簡単に定義できるし追加もできる
+    name:"ロト",
+    hp:100,
+    mp:50,
+  };
+  class Pen{
+    constructor(length){ //コンストラクターは１つのみ、引数は複数可
+      this.length=length;
+    }
+    write(){
+      this.length-=0.5;
+      return "書きました";
+    }
+  }
+  const p1 = new Pen(10);
+  console.log(p1.write());
+  console.log(p1.length);
+
+</script>
+</body>
+</html>
