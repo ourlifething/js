@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>整数を２つ入力してください</h1>
+  x:<input id="x" type="number"><br>
+  y:<input id="y" type="number"><br>
+  
+  <button class="btn" value="plus">+</button>
+  <button class="btn" value="minus">-</button>
+  <button class="btn" value="multi">*</button>
+  <button class="btn" value="div">/</button>
+  <button class="btn" value="mod">%</button>
+  <div id="result"></div>
+<script>
+  const result = document.getElementById("result");
+  const x = document.getElementById("x");
+  
+  const y = document.getElementById("y");
+  
+  const b = document.querySelectorAll(".btn");
+  console.log(b.length);
+  let str ="";
+  for(let i=0; i<b.length; i++){
+    b[i].addEventListener("click",(event)=>{
+      const operator = event.target.value;
+      const numX=parseInt(x.value);
+      const numY=parseInt(y.value);
+      let str =""; 
+      switch(operator){
+        case "plus":
+          str=`${numX}+${numY}=${numX+numY}`;
+          break;
+        case "minus":
+          str=`${numX}-${numY}=${numX-numY}`;
+          break;
+        case "multi":
+          str=`${numX}*${numY}=${numX*numY}`;
+          break;
+        case "div":
+          str=`${numX}/${numY}=${numX/numY}`;
+          break;
+        case "mod":
+          str=`${numX}%${numY}=${numX%numY}`;
+          break;
+      }
+      result.textContent=str; 
+    }); 
+  }
+</script>
+</body>
+</html>
