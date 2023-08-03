@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .li{
+      list-style:none;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  
+  <button id="btn">start</button>
+  <h1>ぞうさん</h1>
+  <ul id="lyrics" class="li"></ul>
+
+  <script>
+    
+    document.addEventListener("DOMContentLoaded",()=>{
+      const lyricsData = [
+      "ぞうさん ぞうさん",
+      "おはながながいのね",
+      "そうよ",
+      "かあさんも ながいのよ",
+      "",
+      "ぞうさん ぞうさん",
+      "だれがすきなの",
+      "あのね",
+      "かあさんが すきなの",
+      ];
+      const btn = document.getElementById("btn");
+      const ul = document.getElementById("lyrics");
+      
+      
+      let sec=0;
+      let timeId =NaN;
+      btn.addEventListener("click", ()=>{
+        if(!timeId){
+        timeId=setInterval(()=>{
+          const li = document.createElement("li"); 
+          li.textContent=lyricsData[sec];
+          sec++;
+          ul.appendChild(li);
+          if(sec === lyricsData.length){
+            clearInterval(timeId);
+          }
+        },2000); 
+        }
+      });
+    });
+  </script>
+</body>
+</html>

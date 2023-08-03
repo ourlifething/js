@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">start</button>
+  <div id="time">0</div>
+  <script>
+   // window.onload=()=>{}; 画像読み込むのに適している
+   //↓文書のみの場合
+   document.addEventListener("DOMContentLoaded",()=>{
+      const btn = document.getElementById("btn");
+      const time = document.getElementById("time");
+      let sec=0;
+      let timeId =NaN;
+      btn.addEventListener("click", ()=>{
+        if(!timeId){
+          console.log(timeId);
+         //setInterval(何するか、何秒毎)
+        timeId=setInterval(()=>{
+          sec++;
+          time.textContent=sec;
+        },1000); 
+        }
+      });
+   });
+  </script>
+  
+</body>
+</html>

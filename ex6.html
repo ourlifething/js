@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">問題</button>
+  <div id="result"></div>
+<script>
+  window.onload=()=>{
+    const btn = document.getElementById("btn");
+    const result = document.getElementById("result");
+    const msg = "skyツリーの高さは何m??"
+    const ans =634;
+    console.log(msg);
+    btn.addEventListener("click",()=>{
+      const userAns=window.prompt(msg);
+      result.textContent=(userAns) == ans? "OK":"NG...634m";
+    });
+  };
+</script>
+</body>
+</html>
